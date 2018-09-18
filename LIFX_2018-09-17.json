@@ -1,0 +1,446 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-09-18T00:50:51.103Z",
+	"__export_source": "insomnia.desktop.app:v6.0.2",
+	"resources": [
+		{
+			"_id": "wrk_822c7403f9f24f5095aef7bde5d8ec61",
+			"created": 1537142627916,
+			"description": "",
+			"modified": 1537142627916,
+			"name": "LIFX",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_a706661fe8074963a762cd538d8b3120",
+			"color": null,
+			"created": 1537142627943,
+			"data": {
+				"usernameAuth": "cfec245f7c347678d76f83ce217908659e6dff9bb93580dc14443824e0c89b78"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1537142627944,
+			"modified": 1537229113939,
+			"name": "New Environment",
+			"parentId": "wrk_822c7403f9f24f5095aef7bde5d8ec61",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_e9cfae2a56264a62bd18acae77f60171",
+			"cookies": [],
+			"created": 1537142627949,
+			"modified": 1537142627949,
+			"name": "Default Jar",
+			"parentId": "wrk_822c7403f9f24f5095aef7bde5d8ec61",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"created": 1537142693557,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1537142693557,
+			"modified": 1537142693557,
+			"name": "LIFX",
+			"parentId": "wrk_822c7403f9f24f5095aef7bde5d8ec61",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_eab289c5568046e9bf3c2776445fac6f",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth }}"
+			},
+			"body": {},
+			"created": 1537142710031,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1537144047070,
+			"method": "GET",
+			"modified": 1537231312796,
+			"name": "List Lights",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/all",
+			"_type": "request"
+		},
+		{
+			"_id": "req_7a67e5c9066c42eba9e756ba39161b28",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"duration\": 5.0\n}"
+			},
+			"created": 1537143272034,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3bb933af318e48be817b0181e0231ba5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537143272034,
+			"method": "POST",
+			"modified": 1537231316716,
+			"name": "Toggle Living Room",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/group:Living Room/toggle",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f4a81c407b694ee8b0251689cd613238",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"power\": \"on\",\n  \"color\": \"green saturation:0.5\",\n  \"brightness\": 0.9,\n  \"duration\": 2\n}"
+			},
+			"created": 1537144047020,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_eb883b181aac434d95cd621422e91c62",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537144047020,
+			"method": "PUT",
+			"modified": 1537231818852,
+			"name": "Set State",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/group:Living Room/state",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1034a3bf2d724f57904eb97bb34da7dc",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "Body Params\nstates:\nrequired\narray of mixed\nArray of state hashes as per Set State. No more than 50 entries.\n\ndefaults:\tobject\nDefault values to use when not specified in each states[] object.\n\nfast:\tbooleanfalse\nExecute the query fast, without initial state checks and wait for no results."
+			},
+			"created": 1537144222236,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_eb883b181aac434d95cd621422e91c62",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537143659527,
+			"method": "PUT",
+			"modified": 1537231517792,
+			"name": "Set State Multi",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/states",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f170da8fd5b94359b4f28997b4e1a913",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "Path Params\nselector:\nrequired\nstring\nThe selector to limit which lights are controlled.\n\nBody Params\npower:\tstring\nThe power state you want to set on the selector. on or off\n\nduration:\tdouble1.0\nHow long in seconds you want the power action to take. Range: 0.0 – 3155760000.0 (100 years)\n\ninfrared:\tdouble\nThe maximum brightness of the infrared channel.\n\nhue:\tdouble\nRotate the hue by this angle in degrees.\n\nsaturation:\tdouble\nChange the saturation by this additive amount; the resulting saturation is clipped to [0, 1].\n\nbrightness:\tdouble\nChange the brightness by this additive amount; the resulting brightness is clipped to [0, 1].\n\nkelvin:\tdouble\nChange the kelvin by this additive amount; the resulting kelvin is clipped to [2500, 9000]."
+			},
+			"created": 1537144272930,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_4a0e0445e9724f1c88c9181d2b8d18c3",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537143465780.5,
+			"method": "POST",
+			"modified": 1537231316111,
+			"name": "State Delta",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/:selector/state/delta",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a450731917c9485aa7eb7d7e0de68dec",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth  }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "Path Params\nselector:\nrequired\nstring\nThe selector to limit which lights will run the effect.\n\nBody Params\ncolor:\nrequired\nstring\nThe color to use for the breathe effect.\n\nfrom_color:\tstringcurrent bulb color\nThe color to start the effect from. If this parameter is omitted then the color the bulb is currently set to is used instead.\n\nperiod:\tdouble1.0\nThe time in seconds for one cyles of the effect.\n\ncycles:\tdouble1.0\nThe number of times to repeat the effect.\n\npersist:\tbooleanfalse\nIf false set the light back to its previous value when effect ends, if true leave the last effect color.\n\npower_on:\tbooleantrue\nIf true, turn the bulb on if it is not already on.\n\npeak:\tdouble0.5\nDefines where in a period the target color is at its maximum. Minimum 0.0, maximum 1.0."
+			},
+			"created": 1537144467172,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b2cd86b9d2b048feb3704ec886d6fda5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1537143271984,
+			"method": "POST",
+			"modified": 1537231060873,
+			"name": "Breathe Effect",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/:selector/effects/breathe",
+			"_type": "request"
+		},
+		{
+			"_id": "req_930ae26743c34a8f8f9ed25eabf73879",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth  }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "Path Params\nselector:\nrequired\nstring\nThe selector to limit which lights will run the effect.\n\nBody Params\ncolor:\nrequired\nstring\nThe color to use for the pulse effect.\n\nfrom_color:\tstringcurrent bulb color\nThe color to start the effect from. If this parameter is omitted then the color the bulb is currently set to is used instead.\n\nperiod:\tdouble1.0\nThe time in seconds for one cyles of the effect.\n\ncycles:\tdouble1.0\nThe number of times to repeat the effect.\n\npersist:\tbooleanfalse\nIf false set the light back to its previous value when effect ends, if true leave the last effect color.\n\npower_on:\tbooleantrue\nIf true, turn the bulb on if it is not already on."
+			},
+			"created": 1537144515937,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b2cd86b9d2b048feb3704ec886d6fda5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1534541498590.5,
+			"method": "POST",
+			"modified": 1537144529977,
+			"name": "Pulse Effect",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/:selector/effects/pulse",
+			"_type": "request"
+		},
+		{
+			"_id": "req_7beb0423ab674bacbfd8d3bebeffcd76",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth  }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "// POST https://api.lifx.com/v1beta1/lights/:selector/cycle with the following JSON body\n{\n  \"states\": [\n    {\n      \"brightness\": 1.0\n    },\n    {\n      \"brightness\": 0.5\n    },\n    {\n      \"brightness\": 0.1\n    },\n    {\n      \"power\": \"off\"\n    }\n  ],\n  \"defaults\": {\n    \"power\": \"on\", // all states default to on\n    \"saturation\": 0, // every state is white\n    \"duration\": 2.0 // all transitions will be applied over 2 seconds\n  }\n}\n// If the light is currently off, sending this request will turn it on to maximum brightness over 2 seconds.\n// If the request is sent again, the light will transition to 50% brightness over 2s, and so on\n      "
+			},
+			"created": 1537144543797,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b2cd86b9d2b048feb3704ec886d6fda5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1533240611893.75,
+			"method": "POST",
+			"modified": 1537231329954,
+			"name": "Cycle",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/lights/group:Living Room/cycle",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8e7f62b333c948b4b01a992ecaa34f30",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth  }}"
+			},
+			"body": {},
+			"created": 1537144572449,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b2cd86b9d2b048feb3704ec886d6fda5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1532590168545.375,
+			"method": "GET",
+			"modified": 1537144620308,
+			"name": "List Scenes",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/scenes",
+			"_type": "request"
+		},
+		{
+			"_id": "req_699b9d9403da4445aedfcbef6f24f0d3",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth  }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "Path Params\nscene_uuid:\nrequired\nstring\nThe UUID for the scene you wish to activate\n\nBody Params\nduration:\tdouble1.0\nTime in seconds to transition from the current light state to the scene state.\n\nignore:\tarray of strings\nAny of \"power\", \"infrared\", \"duration\", \"intensity\", \"hue\", \"saturation\", \"brightness\" or \"kelvin\", specifying that these properties should not be changed on devices when applying the scene.\n\noverrides:\tobject\nA state object as per Set State specifying properties to apply to all devices in the scene, overriding those configured in the scene.\n\nfast:\tbooleanfalse\nExecute the query fast, without initial state checks and wait for no results."
+			},
+			"created": 1537144629950,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b2cd86b9d2b048feb3704ec886d6fda5",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1532264946871.1875,
+			"method": "PUT",
+			"modified": 1537144662656,
+			"name": "Activate Scene",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/scenes/scene_id::scene_uuid/activate",
+			"_type": "request"
+		},
+		{
+			"_id": "req_bf8683c8e5be4bcd9206242ce34faec6",
+			"authentication": {
+				"disabled": false,
+				"password": "",
+				"type": "basic",
+				"username": "{{ usernameAuth  }}"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"string\": \"white\"\n}"
+			},
+			"created": 1537144701850,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_302055eaede44219b2ee41ef2308a717",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1532102336034.0938,
+			"method": "GET",
+			"modified": 1537224878455,
+			"name": "Validate Color",
+			"parameters": [],
+			"parentId": "fld_16bdfb55a5414cf09d3d4813ab7e7ac5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "https://api.lifx.com/v1/color",
+			"_type": "request"
+		}
+	]
+}
