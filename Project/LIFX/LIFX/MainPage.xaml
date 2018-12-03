@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:LIFX" 
+             x:Class="LIFX.MainPage" BackgroundColor="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/> <!--0-->
+                <RowDefinition Height="75"/> <!--1-->
+                <RowDefinition /> <!--2-->
+                <RowDefinition Height="50"/> <!--3-->
+                <RowDefinition /> <!--4-->
+                <RowDefinition /> <!--5-->
+                <RowDefinition Height="100"/> <!--6-->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions> 
+                <ColumnDefinition Width="Auto" /> <!--0-->
+                <ColumnDefinition Width="*"/> <!--1-->
+                <ColumnDefinition Width="Auto"  /> <!--2-->
+            </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
+        <Label Grid.Row="1" Grid.ColumnSpan="3"/>
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand">
+            <Button Text="  Lights  " FontSize="Large" FontAttributes="Bold"
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+        </StackLayout> 
+        <Image Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="0" Aspect="AspectFit" Source="lifx_logo.jpg"/>
+        <StackLayout Grid.Row="5" Grid.Column="0" HorizontalOptions="CenterAndExpand" >
+            <Button Text="  Home  " FontSize="Large" FontAttributes="Bold"
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+        </StackLayout>
+        <StackLayout Grid.Row="5" Grid.Column="2" HorizontalOptions="CenterAndExpand" >
+            <Button Text="  App Assistant  " FontSize="Large" FontAttributes="Bold"
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+        </StackLayout>
+        <Image Grid.ColumnSpan="3" Grid.Row="6" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
+
+        </Grid>
+    
+</ContentPage>
