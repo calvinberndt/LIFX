@@ -7,13 +7,13 @@ using System.Text;
 using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
 
-namespace XamarinApp3
+namespace LIFX.pages
 {
     public class RestService
     {
-        HttpClient client;
+        //HttpClient client;
         GetLifx lifx;
-        internal const string USERNAME = "cfec245f7c347678d76f83ce217908659e6dff9bb93580dc14443824e0c89b78";
+        internal const string USERNAME = "";
         internal const string PASSWORD = "";
 
         public RestService()
@@ -23,7 +23,10 @@ namespace XamarinApp3
                 UserName = USERNAME,
                 Password = PASSWORD
             };
+        }
 
+        public void MakeApiCall()
+        {
             var authData = string.Format("{0}:{1}", lifx.UserName, lifx.Password);
             var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
@@ -46,6 +49,10 @@ namespace XamarinApp3
         }
     }
 
+    //public class MakeLifxApiCall
+    //{
+
+    //}
 
     public class GetLifx
     {
@@ -58,33 +65,33 @@ namespace XamarinApp3
     }
 
 
-    public class LifxAPIController : ContentPage
-    {
-        //https://api.lifx.com/v1/lights/group:Living Room/toggle
-        private const string url = "https://api.lifx.com/v1/lights/group:Living Room/toggle";
-        private HttpClient _Client = new HttpClient();
-        private ObservableCollection<GetLifx> _getLifx;
+    //public class LifxAPIController : ContentPage
+    //{
+    //    //https://api.lifx.com/v1/lights/group:Living Room/toggle
+    //    private const string url = "https://api.lifx.com/v1/lights/group:Living Room/toggle";
+    //    private HttpClient _Client = new HttpClient();
+    //    private ObservableCollection<GetLifx> _getLifx;
 
-        protected override async void OnAppearing()
-        {
-            var toggleLifxLights = new GetLifx() { 
-                UserName = "cfec245f7c347678d76f83ce217908659e6dff9bb93580dc14443824e0c89b78",
-                Duration = "1.0"
-            };
+    //    protected override async void OnAppearing()
+    //    {
+    //        var toggleLifxLights = new GetLifx() { 
+    //            UserName = "",
+    //            Duration = "1.0"
+    //        };
 
-            var content = await _Client.GetStringAsync(url);
-            var getLifx = JsonConvert.DeserializeObject<GetLifx>(content);
-            _getLifx = new ObservableCollection<GetLifx>((System.Collections.Generic.IEnumerable<XamarinApp3.GetLifx>)getLifx);
-            //Get_List.ItemsSource = _get;
-            //base.OnAppearing();
-        }
+    //        var content = await _Client.GetStringAsync(url);
+    //        var getLifx = JsonConvert.DeserializeObject<GetLifx>(content);
+    //        _getLifx = new ObservableCollection<GetLifx>((System.Collections.Generic.IEnumerable<XamarinApp3.GetLifx>)getLifx);
+    //        //Get_List.ItemsSource = _get;
+    //        //base.OnAppearing();
+    //    }
 
-        //private async void OnAdd(object sender, System.EventArgs e)
-        //{
-        //    var post = new Post() { title = "Title" + DateTime.Now.Ticks, body = "Body" };
-        //    _post.Insert(0, post);
-        //    var content = JsonConvert.SerializeObject(post);
-        //    await _Client.PostAsync(url, new StringContent(content));
-        //}
-    }
+    //    //private async void OnAdd(object sender, System.EventArgs e)
+    //    //{
+    //    //    var post = new Post() { title = "Title" + DateTime.Now.Ticks, body = "Body" };
+    //    //    _post.Insert(0, post);
+    //    //    var content = JsonConvert.SerializeObject(post);
+    //    //    await _Client.PostAsync(url, new StringContent(content));
+    //    //}
+    //}
 }
