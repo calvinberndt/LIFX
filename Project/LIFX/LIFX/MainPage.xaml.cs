@@ -17,9 +17,19 @@ namespace LIFX
             };
         }
 
-        void Light_Clicked(object sender, System.EventArgs e)
+        private async void Light_Clicked(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new LIFXLightSelection());
+        }
+
+        private async void Home_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        private async void Info_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Info_Page());
         }
     }
 }

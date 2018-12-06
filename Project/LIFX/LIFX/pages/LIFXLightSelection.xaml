@@ -3,16 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="LIFX.pages.LIFXLightSelection"
              BackgroundColor="Black" >
-    <Grid>
+   <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" /> <!--0-->
-                <RowDefinition /> <!--1-->
+                <RowDefinition Height="100"/> <!--0-->
+                <RowDefinition Height="75"/> <!--1-->
                 <RowDefinition /> <!--2-->
-                <RowDefinition /> <!--3-->
+                <RowDefinition Height="50"/> <!--3-->
                 <RowDefinition /> <!--4-->
                 <RowDefinition /> <!--5-->
-                <RowDefinition /> <!--6-->
-                <RowDefinition Height="100"/> <!--7-->
+                <RowDefinition Height="100"/> <!--6-->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions> 
                 <ColumnDefinition Width="Auto" /> <!--0-->
@@ -22,22 +21,20 @@
         <Image Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
         <Label Grid.Row="1" Grid.ColumnSpan="3"/>
         <StackLayout Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand">
-            <Button Text="  Lights  " FontSize="Large" FontAttributes="Bold"
+            <Button Text="  Lights Controller  " FontSize="Large" FontAttributes="Bold"
                     HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
         </StackLayout> 
-        <StackLayout Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" >
-            <Button Image="lifx_logo.jpg" HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-        <!--<Image Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="0" Aspect="AspectFit" Source="lifx_logo.jpg"/>-->
+        <Image Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="0" Aspect="AspectFit" Source="lifx_logo.jpg"/>
         <StackLayout Grid.Row="5" Grid.Column="0" HorizontalOptions="CenterAndExpand" >
             <Button Text="  Home  " FontSize="Large" FontAttributes="Bold"
-                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black" Clicked="Home_Clicked"/>
         </StackLayout>
         <StackLayout Grid.Row="5" Grid.Column="2" HorizontalOptions="CenterAndExpand" >
             <Button Text="  App Assistant  " FontSize="Large" FontAttributes="Bold"
-                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black" Clicked="Info_Clicked"/>
         </StackLayout>
         <Image Grid.ColumnSpan="3" Grid.Row="6" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
+
         </Grid>
     
 </ContentPage>

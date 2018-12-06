@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LIFX.pages.Info_Page"
+             BackgroundColor="Black">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/> <!--0-->
+                <RowDefinition Height="75"/> <!--1-->
+                <RowDefinition /> <!--2-->
+                <RowDefinition Height="50"/> <!--3-->
+                <RowDefinition /> <!--4-->
+                <RowDefinition /> <!--5-->
+                <RowDefinition Height="100"/> <!--6-->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions> 
+                <ColumnDefinition Width="Auto" /> <!--0-->
+                <ColumnDefinition Width="*"/> <!--1-->
+                <ColumnDefinition Width="Auto"  /> <!--2-->
+            </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
+        
+        <Image Grid.ColumnSpan="3" Grid.Row="6" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
+
+        </Grid>
+</ContentPage>

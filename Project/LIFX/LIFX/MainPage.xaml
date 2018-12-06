@@ -19,17 +19,21 @@
         <Image Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
         <Label Grid.Row="1" Grid.ColumnSpan="3"/>
         <StackLayout Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="CenterAndExpand">
-            <Button Text="  Lights  " FontSize="Large" FontAttributes="Bold"
-                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+            <Button Text="  Lights Controller  " FontSize="Large" FontAttributes="Bold"
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black" Clicked="Light_Clicked"/>
         </StackLayout> 
-        <Image Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="0" Aspect="AspectFit" Source="lifx_logo.jpg"/>
+        <Image Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="0" Aspect="AspectFit" Source="lifx_logo.jpg">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Light_Clicked"/>  
+            </Image.GestureRecognizers>
+        </Image>
         <StackLayout Grid.Row="5" Grid.Column="0" HorizontalOptions="CenterAndExpand" >
             <Button Text="  Home  " FontSize="Large" FontAttributes="Bold"
-                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black" Clicked="Home_Clicked"/>
         </StackLayout>
-        <StackLayout Grid.Row="5" Grid.Column="2" HorizontalOptions="CenterAndExpand" >
+        <StackLayout Grid.Row="5" Grid.Column="2" HorizontalOptions="CenterAndExpand">
             <Button Text="  App Assistant  " FontSize="Large" FontAttributes="Bold"
-                    HeightRequest="50" BorderWidth="5" BorderColor="Black"/>
+                    HeightRequest="50" BorderWidth="5" BorderColor="Black" Clicked="Info_Clicked"/>
         </StackLayout>
         <Image Grid.ColumnSpan="3" Grid.Row="6" Grid.Column="0" Aspect="Fill" Source="spectrum.jpg"/>
 
