@@ -16,6 +16,8 @@ namespace LIFX.pages
         private async void Home_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
+            var restService = new RestService();
+            restService.MakeApiCall();
         }
 
         private async void Info_Clicked(object sender, System.EventArgs e)
