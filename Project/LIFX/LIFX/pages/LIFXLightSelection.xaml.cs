@@ -35,11 +35,30 @@ namespace LIFX.pages
 
         void Red_Clicked(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            //{  "power": "on", "color": "white", "brightness": 0.1, "duration": 2 }
+            var restService = new RestService();
+            var lifxAPICallerObject = new LifxAPICallerObject();
+
+            lifxAPICallerObject.Power = "on";
+            lifxAPICallerObject.Color = "red";
+            lifxAPICallerObject.Brightness = 0.8;
+            lifxAPICallerObject.Duration = 3.0;
+
+            restService.ChangeLightsColor(lifxAPICallerObject);
         }
+
         void Blue_Clicked(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            //{  "power": "on", "color": "white", "brightness": 0.1, "duration": 2 }
+            var restService = new RestService();
+            var lifxAPICallerObject = new LifxAPICallerObject();
+
+            lifxAPICallerObject.Power = "on";
+            lifxAPICallerObject.Color = "blue";
+            lifxAPICallerObject.Brightness = 0.8;
+            lifxAPICallerObject.Duration = 3.0;
+
+            restService.ChangeLightsColor(lifxAPICallerObject);
         }
     }
 }

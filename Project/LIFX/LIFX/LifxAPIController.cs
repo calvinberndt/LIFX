@@ -56,16 +56,24 @@ namespace LIFX.pages
             HttpClient oHttpClient = new HttpClient();
             oHttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorizationHeaderValue);
 
-            //string sUrl = "https://api.lifx.com/v1/lights/group:Living Room/toggle";
-            //string sContentType = "application/json";
-
-            //JObject oJsonObject = new JObject();
-            //oJsonObject.Add("duration", 5.0);
-
             var oTaskPostAsync = oHttpClient.PostAsync(url, new StringContent(jsonObject.ToString(), Encoding.UTF8, CONTENT_TYPE));
             oTaskPostAsync.ContinueWith((oHttpResponseMessage) =>
             {
-                // response of post here
+                // caller block
+                // this code won't execute until a response has been received from the Post
+            });
+        }
+
+        private void MakePutApiCall(string url, JObject jsonObject)
+        {
+            var authorizationHeaderValue = GetAuthorizationHeader();
+
+            HttpClient oHttpClient = new HttpClient();
+            oHttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorizationHeaderValue);
+
+            var oTaskPutAsync = oHttpClient.PutAsync(url, new StringContent(jsonObject.ToString(), Encoding.UTF8, CONTENT_TYPE));
+            oTaskPutAsync.ContinueWith((oHttpResponseMessage) =>
+            {
                 // caller block
                 // this code won't execute until a response has been received from the Post
             });
@@ -77,11 +85,29 @@ namespace LIFX.pages
         public void ToggleLights(LifxAPICallerObject lifxAPICallerObject)
         {
             var urlValue = "https://api.lifx.com/v1/lights/group:Living Room/toggle";
-            var jsonObject = new JObject();
-            jsonObject.Add("duration", lifxAPICallerObject.Duration);
+            var jsonObject = new JObject
+            {
+                { "duration", lifxAPICallerObject.Duration }
+            };
 
             //String url, JObject jsonObject
             MakePostApiCall(urlValue, jsonObject);
+        }
+
+        //{  "power": "on", "color": "white", "brightness": 0.1, "duration": 2 }
+        public void ChangeLightsColor(LifxAPICallerObject lifxAPICallerObject)
+        {
+            var urlValue = "https://api.lifx.com/v1/lights/group:Living Room/state";
+            var jsonObject = new JObject
+            {
+                { "power", lifxAPICallerObject.Power },
+                { "color", lifxAPICallerObject.Color },
+                { "brightness", lifxAPICallerObject.Brightness },
+                { "duration", lifxAPICallerObject.Duration }
+            };
+
+            //String url, JObject jsonObject
+            MakePutApiCall(urlValue, jsonObject);
         }
     }
 
