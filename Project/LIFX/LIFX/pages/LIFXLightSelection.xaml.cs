@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using LIFX.Controller;
 using Xamarin.Forms;
+using static LIFX.Controller.LifxApiCallerProperties;
 
 namespace LIFX.pages
 {
@@ -25,40 +26,46 @@ namespace LIFX.pages
 
         void Toggle_Clicked(object sender, System.EventArgs e)
         {
-            var restService = new RestService();
-            var lifxAPICallerObject = new LifxAPICallerObject();
+            var apiCallersController = new APICallersController();
 
-            lifxAPICallerObject.Duration = 5.0;
+            var lifxAPICallerObject = new LifxAPICallerObject
+            {
+                Duration = 5.0
+            };
 
-            restService.ToggleLights(lifxAPICallerObject);
+            apiCallersController.ToggleLights(lifxAPICallerObject);
         }
 
         void Red_Clicked(object sender, System.EventArgs e)
         {
             //{  "power": "on", "color": "white", "brightness": 0.1, "duration": 2 }
-            var restService = new RestService();
-            var lifxAPICallerObject = new LifxAPICallerObject();
+            var apiCallersController = new APICallersController();
 
-            lifxAPICallerObject.Power = "on";
-            lifxAPICallerObject.Color = "red";
-            lifxAPICallerObject.Brightness = 0.8;
-            lifxAPICallerObject.Duration = 3.0;
+            var lifxAPICallerObject = new LifxAPICallerObject
+            {
+                Power = "on",
+                Color = "red",
+                Brightness = 0.8,
+                Duration = 3.0
+            };
 
-            restService.ChangeLightsColor(lifxAPICallerObject);
+            apiCallersController.ChangeLightsColor(lifxAPICallerObject);
         }
 
         void Blue_Clicked(object sender, System.EventArgs e)
         {
             //{  "power": "on", "color": "white", "brightness": 0.1, "duration": 2 }
-            var restService = new RestService();
-            var lifxAPICallerObject = new LifxAPICallerObject();
+            var apiCallersController = new APICallersController();
 
-            lifxAPICallerObject.Power = "on";
-            lifxAPICallerObject.Color = "blue";
-            lifxAPICallerObject.Brightness = 0.8;
-            lifxAPICallerObject.Duration = 3.0;
+            var lifxAPICallerObject = new LifxAPICallerObject
+            {
+                Power = "on",
+                Color = "blue",
+                Brightness = 0.8,
+                Duration = 3.0
+            };
 
-            restService.ChangeLightsColor(lifxAPICallerObject);
+            apiCallersController.ChangeLightsColor(lifxAPICallerObject);
         }
     }
 }
