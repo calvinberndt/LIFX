@@ -16,8 +16,13 @@ namespace LIFX.pages
         private async void Home_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
+
             var restService = new RestService();
-            restService.MakeApiCall();
+            var lifxAPICallerObject = new LifxAPICallerObject();
+
+            lifxAPICallerObject.Duration = 5.0;
+
+            restService.ToggleLights(lifxAPICallerObject);
         }
 
         private async void Info_Clicked(object sender, System.EventArgs e)
